@@ -36,8 +36,8 @@ class PythonREPLTool(ToolInterface):
 
     name: str = "Python REPL"
     description: str = (
-        "A Python shell. Use this to execute python commands. "
-        "Input should be a valid python command. "
+        "A Python shell. Use this to execute python code. "
+        "Input must be valid Python code, such as would run in Python 3.10 "
         "If you want to see the output of a value, you should print it out "
         "with `print(...)`."
     )
