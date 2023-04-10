@@ -44,6 +44,7 @@ class PythonREPLTool(ToolInterface):
     python_repl: PythonREPL = Field(default_factory=_get_default_python_repl)
 
     def use(self, input_text: str) -> str:
+        input_text = input_text.strip().strip("```python")
         input_text = input_text.strip().strip("```")
         return self.python_repl.run(input_text)
 

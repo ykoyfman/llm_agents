@@ -4,7 +4,10 @@ import subprocess
 import sys
 
 def do_install(package: str) -> str:
-    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+    try:
+        subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+    except Exception as e:
+        return ("Package install error: try another package:" + str(e))
     return ("Done")
 
 class PipInstallTool(ToolInterface):
